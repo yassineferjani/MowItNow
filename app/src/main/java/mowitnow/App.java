@@ -37,6 +37,7 @@ public class App {
 
             // Lecture des données de chaque tondeuse
             while (scanner.hasNextLine()) {
+                // Lecture de la position initial de chaque tondeuse
                 String position = scanner.nextLine();
                 if (!CheckInput.checkInstructionFirstLine(position))
                     throw new InvalidInput("Invalid mower coordinate : " + position);
@@ -44,6 +45,7 @@ public class App {
                         Integer.parseInt(position.split("\\s")[1]));
                 Orientation orientationT = Adapter.getOrientation(position.split("\\s")[2].charAt(0));
                 Tondeuse tondeuse = new Tondeuse(coordinateT,orientationT);
+                // Lecture des instructions pour chaque tondeuse
                 String instruction = scanner.nextLine();
                 if(!CheckInput.checkInstructionSecondLine(instruction))
                     throw new InvalidInput("Invalid instructions  : " + instruction);
