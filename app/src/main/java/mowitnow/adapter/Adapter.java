@@ -3,9 +3,6 @@ package mowitnow.adapter;
 import mowitnow.model.InstructionTondeuse;
 import mowitnow.model.Orientation;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Adapter {
     public static InstructionTondeuse getInstruction(char tInstruction) {
         for (InstructionTondeuse instructionTondeuse : InstructionTondeuse.values()) {
