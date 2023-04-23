@@ -7,25 +7,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Adapter {
-    public static List<InstructionTondeuse> formaterLigneInstruction(String ligneInstruction) {
-        List<InstructionTondeuse> listInstructionTondeuse = new ArrayList<InstructionTondeuse>();
-        for (char instruction : ligneInstruction.toCharArray()) {
-            listInstructionTondeuse.add(getInstruction(instruction));
-        }
-        return listInstructionTondeuse;
-    }
-    public static InstructionTondeuse getInstruction(char cInstruction) {
+    public static InstructionTondeuse getInstruction(char tInstruction) {
         for (InstructionTondeuse instructionTondeuse : InstructionTondeuse.values()) {
-            if (instructionTondeuse.getCodeInstruction() == cInstruction) {
+            if (instructionTondeuse.getCodeInstruction() == tInstruction) {
                 return instructionTondeuse;
             }
         }
         return null;
     }
 
-    public static Orientation getOrientation(char cOrientation) {
+    public static Orientation getOrientation(char tOrientation) {
         for (Orientation orientation : Orientation.values()) {
-            if (orientation.getSymbol() == cOrientation) {
+            if (orientation.getSymbol() == tOrientation) {
                 return orientation;
             }
         }
