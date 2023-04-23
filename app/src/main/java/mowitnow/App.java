@@ -47,7 +47,7 @@ public class App {
                 char [] instructions = instruction.toCharArray();
 
                 for (char i : instructions){
-                   Instruction.executeInstruction(Adapter.getInstruction(i),tondeuse,pelouseTaken,pelouse);
+                   Instruction.executeInstruction(Adapter.getInstruction(i),tondeuse,pelouseTaken,pelouse.getCoordonnees());
                 }
                 pelouseTaken.add(tondeuse.getCurrentCoordinate());
                 System.out.println(tondeuse);

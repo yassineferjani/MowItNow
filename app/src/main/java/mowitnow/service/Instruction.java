@@ -58,7 +58,7 @@ public class Instruction {
     public static void executeInstruction(final InstructionTondeuse instruction,
                                           final Tondeuse tondeuse,
                                           final List<Coordinate> pelouseTaken,
-                                          final Pelouse pelouse) {
+                                          final List<Coordinate> list) {
         Coordinate nextCoordinate;
         if (! checkCoordinate(tondeuse.getCurrentCoordinate(), pelouseTaken)) {
             throw new RuntimeException();
@@ -68,7 +68,7 @@ public class Instruction {
             case Left -> tondeuse.setCurrentOrientation(rotateLeft(tondeuse.getCurrentOrientation()));
             case Forward -> {
                 nextCoordinate = avancer(tondeuse.getCurrentCoordinate(),tondeuse.getCurrentOrientation());
-                if (isCoordonneesValid(nextCoordinate, pelouse.getCoordonnees())){
+                if (isCoordonneesValid(nextCoordinate, list)){
                     tondeuse.setCurrentCoordinate(nextCoordinate);
                 }else {
                     throw new InvalidCoordinate("Invalid coordinate for this instruction : " + instruction);
