@@ -5,15 +5,12 @@ public enum Orientation {
     EAST('E', 90),
     WEST('W', 270),
     SOUTH('S', 180);
-
     private final char symbol;
     private final int angle;
-
     private Orientation(char symbol, int angle) {
         this.symbol = symbol;
         this.angle = angle;
     }
-
     public char getSymbol() {
         return symbol;
     }

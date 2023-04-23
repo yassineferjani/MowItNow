@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2aaea86-d1fb-4cc3-8f20-1f22afeca253" name="Changes" comment="" />
+    <list default="true" id="a2aaea86-d1fb-4cc3-8f20-1f22afeca253" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/mowitnow/adapter/Adapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/mowitnow/adapter/Adapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/mowitnow/model/InstructionTondeuse.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/mowitnow/model/InstructionTondeuse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/mowitnow/model/Orientation.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/mowitnow/model/Orientation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/mowitnow/model/Pelouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/mowitnow/model/Pelouse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/mowitnow/model/Tondeuse.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/mowitnow/model/Tondeuse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/mowitnow/service/CheckInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/mowitnow/service/CheckInput.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,6 +75,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
