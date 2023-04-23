@@ -28,7 +28,7 @@ public class App {
             // Lecture des coordonnées de la pelouse
             String lignePelouse = scanner.nextLine();
             if (!CheckInput.checkFirstLine(lignePelouse))
-                throw new InvalidInput("Invalid pelouse cordiate : " + lignePelouse);
+                throw new InvalidInput("Invalid pelouse coordinate : " + lignePelouse);
             Coordinate coordinatePelouse = new Coordinate(Integer.parseInt(lignePelouse.split("\\s")[0]),
                     Integer.parseInt(lignePelouse.split("\\s")[1]));
 
@@ -38,12 +38,15 @@ public class App {
             // Lecture des données de chaque tondeuse
             while (scanner.hasNextLine()) {
                 String position = scanner.nextLine();
+                if (!CheckInput.checkInstructionFirstLine(position))
+                    throw new InvalidInput("Invalid mower coordinate : " + position);
                 Coordinate coordinateT = new Coordinate(Integer.parseInt(position.split("\\s")[0]),
                         Integer.parseInt(position.split("\\s")[1]));
                 Orientation orientationT = Adapter.getOrientation(position.split("\\s")[2].charAt(0));
                 Tondeuse tondeuse = new Tondeuse(coordinateT,orientationT);
                 String instruction = scanner.nextLine();
-
+                if(!CheckInput.checkInstructionSecondLine(instruction))
+                    throw new InvalidInput("Invalid instructions  : " + instruction);
                 char [] instructions = instruction.toCharArray();
 
                 for (char i : instructions){
