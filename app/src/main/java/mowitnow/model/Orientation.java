@@ -2,6 +2,9 @@ package mowitnow.model;
 
 public enum Orientation {
     NORTH('N', 0),
+
+    /** problème */
+    NORTH_EAST("NE", 45),
     EAST('E', 90),
     WEST('W', 270),
     SOUTH('S', 180);
