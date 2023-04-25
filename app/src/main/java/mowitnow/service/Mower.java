@@ -9,7 +9,7 @@ import mowitnow.model.Lawn;
 
 @Data
 @Builder
-public class MoveMow {
+public class Mower {
     Orientation currentOrientation;
     Coordinate currentCoordinate;
     Lawn map;

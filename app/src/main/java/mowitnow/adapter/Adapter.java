@@ -3,7 +3,7 @@ package mowitnow.adapter;
 import mowitnow.exception.InvalidInput;
 import mowitnow.model.*;
 import mowitnow.service.CheckInput;
-import mowitnow.service.MoveMow;
+import mowitnow.service.Mower;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -49,7 +49,7 @@ public class Adapter {
         return new Lawn(maxX,maxY);
     }
 
-    public static MoveMow maptoMower(String s, Lawn map){
+    public static Mower maptoMower(String s, Lawn map){
         if (!CheckInput.isValidMowerPosition(s))
             throw new InvalidInput("Invalid pelouse coordinate : " + s);
         String[] dimension = s.split("\\s");
@@ -60,7 +60,7 @@ public class Adapter {
                 .x(x)
                 .y(y)
                 .build();
-        return MoveMow.builder()
+        return Mower.builder()
                 .currentCoordinate(coordinate)
                 .currentOrientation(orientation)
                 .map(map)
@@ -74,5 +74,11 @@ public class Adapter {
             case SOUTH->"S";
             case WEST->"W";
         };
+    }
+
+    public static void printResult(Mower mower){
+        System.out.println(mower.getCurrentCoordinate().x() + " "
+                + mower.getCurrentCoordinate().y()+ " "
+                + mapFromOrientation(mower.getCurrentOrientation()));
     }
 }

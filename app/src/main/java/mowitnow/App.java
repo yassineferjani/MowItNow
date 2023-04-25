@@ -5,7 +5,7 @@ package mowitnow;
 
 import mowitnow.adapter.Adapter;
 import mowitnow.model.Movement;
-import mowitnow.service.MoveMow;
+import mowitnow.service.Mower;
 import mowitnow.model.Lawn;
 
 import java.io.IOException;
@@ -23,16 +23,17 @@ public class App {
                     Paths.get("D:\\MowItNow\\app\\src\\main\\resources\\fichier.txt"));
 
             Lawn lawn = Adapter.maptoLawn(listLines.get(0));
-            MoveMow mower1 = maptoMower(listLines.get(1),lawn);
+            Mower mower1 = maptoMower(listLines.get(1),lawn);
             List<Movement> movementMower1= mapToListOfMovements(listLines.get(2));
-            MoveMow mower2 = maptoMower(listLines.get(3),lawn);
+            Mower mower2 = maptoMower(listLines.get(3),lawn);
             List<Movement> movementMower2= mapToListOfMovements(listLines.get(4));
 
             movementMower1.forEach(mower1::execute);
             movementMower2.forEach(mower2::execute);
 
-            System.out.println(mower1.getCurrentCoordinate().toString() + mapFromOrientation(mower1.getCurrentOrientation()));
-            System.out.println(mower2.getCurrentCoordinate().toString() + mapFromOrientation(mower2.getCurrentOrientation()));
+            printResult(mower1);
+            printResult(mower2);
+
 
 
         } catch (IOException e) {
