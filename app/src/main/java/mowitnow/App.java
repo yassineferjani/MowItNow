@@ -4,64 +4,40 @@
 package mowitnow;
 
 import mowitnow.adapter.Adapter;
-import mowitnow.exception.InvalidInput;
-import mowitnow.model.Coordinate;
-import mowitnow.model.Orientation;
-import mowitnow.model.Pelouse;
-import mowitnow.model.Tondeuse;
-import mowitnow.service.CheckInput;
-import mowitnow.service.Instruction;
+import mowitnow.model.Movement;
+import mowitnow.service.MoveMow;
+import mowitnow.model.Lawn;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
-import java.util.Scanner;
+
+import static mowitnow.adapter.Adapter.*;
 
 public class App {
     public static void main(String[] args) {
 
         try {
-            File file = new File("D:\\MowItNow\\app\\src\\main\\resources\\fichier.txt");
-            Scanner scanner = new Scanner(file);
+            List<String> listLines = Files.readAllLines(
+                    Paths.get("D:\\MowItNow\\app\\src\\main\\resources\\fichier.txt"));
 
-            // Lecture des coordonnées de la pelouse
-            String lignePelouse = scanner.nextLine();
-            if (!CheckInput.checkFirstLine(lignePelouse))
-                throw new InvalidInput("Invalid pelouse coordinate : " + lignePelouse);
-            Coordinate coordinatePelouse = new Coordinate(Integer.parseInt(lignePelouse.split("\\s")[0]),
-                    Integer.parseInt(lignePelouse.split("\\s")[1]));
+            Lawn lawn = Adapter.maptoLawn(listLines.get(0));
+            MoveMow mower1 = maptoMower(listLines.get(1),lawn);
+            List<Movement> movementMower1= mapToListOfMovements(listLines.get(2));
+            MoveMow mower2 = maptoMower(listLines.get(3),lawn);
+            List<Movement> movementMower2= mapToListOfMovements(listLines.get(4));
 
-           Pelouse pelouse = new Pelouse(coordinatePelouse);
-            List<Coordinate> pelouseTaken = new ArrayList<>();
+            movementMower1.forEach(mower1::execute);
+            movementMower2.forEach(mower2::execute);
 
-            // Lecture des données de chaque tondeuse
-            while (scanner.hasNextLine()) {
-                // Lecture de la position initial de chaque tondeuse
-                String position = scanner.nextLine();
-                if (!CheckInput.checkInstructionFirstLine(position))
-                    throw new InvalidInput("Invalid mower coordinate : " + position);
-                Coordinate coordinateT = new Coordinate(Integer.parseInt(position.split("\\s")[0]),
-                        Integer.parseInt(position.split("\\s")[1]));
-                Orientation orientationT = Adapter.getOrientation(position.split("\\s")[2].charAt(0));
-                Tondeuse tondeuse = new Tondeuse(coordinateT,orientationT);
-                // Lecture des instructions pour chaque tondeuse
-                String instruction = scanner.nextLine();
-                if(!CheckInput.checkInstructionSecondLine(instruction))
-                    throw new InvalidInput("Invalid instructions  : " + instruction);
-                char [] instructions = instruction.toCharArray();
+            System.out.println(mower1.getCurrentCoordinate().toString() + mapFromOrientation(mower1.getCurrentOrientation()));
+            System.out.println(mower2.getCurrentCoordinate().toString() + mapFromOrientation(mower2.getCurrentOrientation()));
 
-                for (char i : instructions){
-                   Instruction.executeInstruction(Adapter.getInstruction(i),tondeuse,pelouseTaken,pelouse.getCoordonnees());
-                }
-                pelouseTaken.add(tondeuse.getCurrentCoordinate());
-                System.out.println(tondeuse);
-            }
-            scanner.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
-
     }
 }
 

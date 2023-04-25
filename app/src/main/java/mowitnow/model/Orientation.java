@@ -1,30 +1,46 @@
 package mowitnow.model;
 
+import java.util.Arrays;
+
 public enum Orientation {
-    NORTH('N', 0),
-    EAST('E', 90),
-    WEST('W', 270),
-    SOUTH('S', 180);
-    private final char symbol;
+    NORTH(0),
+    EAST(90),
+    WEST( 270),
+    SOUTH( 180);
     private final int angle;
-    private Orientation(char symbol, int angle) {
-        this.symbol = symbol;
+    private Orientation( int angle) {
         this.angle = angle;
     }
-    public char getSymbol() {
-        return symbol;
-    }
+
     public int getAngle() {
         return angle;
     }
-    public static Orientation getOrientation(int angle) {
-        return switch (angle) {
-            case 0->NORTH;
-            case 90->EAST;
-            case 180->SOUTH;
-            case 270->WEST;
-            default -> throw new IllegalStateException("Unexpected value: " + angle);
-        };
-    }
 
+   /* public static Orientation getOrientation (int angle){
+        int degreeModule;
+        if (angle>=360)
+            degreeModule=angle%360;
+        else if (angle<0)
+            degreeModule = (angle%360 + 360) %360;
+        else
+            degreeModule =angle;
+        return Arrays.stream(Orientation.values())
+                .filter(a->degreeModule==a.getAngle())
+                .findFirst()
+                .orElseThrow(()-> new IllegalStateException("Unexpected value: " + angle));
+    }*/
+   public static Orientation getOrientation(int angle) {
+       int degreeModule = (angle % 360 + 360) % 360;
+       return Orientation.fromAngle(degreeModule);
+   }
+    public static Orientation fromAngle(int angle) {
+        switch (angle) {
+            case 0: return NORTH;
+            case 90: return EAST;
+            case 180: return SOUTH;
+            case 270: return WEST;
+            default:
+                throw new IllegalArgumentException("Invalid angle: " + angle);
+        }
+    }
 }
