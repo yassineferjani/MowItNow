@@ -14,9 +14,9 @@ import static mowitnow.model.Orientation.*;
 public class Adapter {
     public static Movement mapToMovement(char c) {
         return switch (c){
-            case 'D'->Right;
-            case 'A'->Forward;
-            case 'G'->Left;
+            case 'D'-> RIGHT;
+            case 'A'-> FORWARD;
+            case 'G'-> LEFT;
             default -> throw new IllegalStateException("Unexpected value: " + c);
         };
     }
@@ -42,7 +42,7 @@ public class Adapter {
     }
     public static Lawn maptoLawn(String s){
         if (!CheckInput.isValidLawerCordinate(s))
-            throw new InvalidInput("Invalid pelouse coordinate : " + s);
+            throw new InvalidInput("Invalid lawn coordinate : " + s);
         String[] dimension = s.split("\\s");
         int maxX = Integer.parseInt(dimension[0]);
         int maxY = Integer.parseInt(dimension[1]);
@@ -51,7 +51,7 @@ public class Adapter {
 
     public static Mower maptoMower(String s, Lawn map){
         if (!CheckInput.isValidMowerPosition(s))
-            throw new InvalidInput("Invalid pelouse coordinate : " + s);
+            throw new InvalidInput("Invalid lawn coordinate : " + s);
         String[] dimension = s.split("\\s");
         int x = Integer.parseInt(dimension[0]);
         int y = Integer.parseInt(dimension[1]);

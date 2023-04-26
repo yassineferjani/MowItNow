@@ -8,6 +8,6 @@ public class CheckInput {
         return str.matches("\\d+ \\d+ [A-Z]+");
     }
     public static boolean isValidMowerMovements(String str) {
-        return str.matches("^\\S+$");
+        return str.matches("^[\\p{L}]+$");
     }
 }

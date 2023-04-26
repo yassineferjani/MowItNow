@@ -5,12 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2aaea86-d1fb-4cc3-8f20-1f22afeca253" name="Changes" comment="Fixed code">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/mowitnow/adapter/AdapterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/mowitnow/model/LawnTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/mowitnow/model/OrientationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/mowitnow/service/CheckInputTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/mowitnow/service/MowerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/mowitnow/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/mowitnow/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/mowitnow/adapter/Adapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/mowitnow/adapter/Adapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/mowitnow/model/Lawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/mowitnow/model/Lawn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/mowitnow/model/Movement.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/mowitnow/model/Movement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/mowitnow/model/Orientation.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/mowitnow/model/Orientation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/mowitnow/service/MoveMow.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/mowitnow/service/Mower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/mowitnow/service/CheckInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/mowitnow/service/CheckInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/mowitnow/service/Mower.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/mowitnow/service/Mower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/mowitnow/AppTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +82,7 @@
       <list>
         <option value="Enum" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -91,6 +101,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
 }]]></component>
@@ -100,46 +112,87 @@
       <recent name="D:\MowItNow\app\src\main\java\mowitnow" />
       <recent name="D:\MowItNow\app\src\main\java\mowitnow\Mouvement" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="mowitnow.service" />
+      <recent name="mowitnow.model" />
+      <recent name="mowitnow.adapter" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.App">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="mowitnow.App" />
-      <module name="MowItNow.app.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="mowitnow.exception.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+  <component name="RunManager" selected="JUnit.All in MowItNow.app.test">
+    <configuration name="All in MowItNow.app.test (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MowItNow.app.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MowItNow:app [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="run" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
+    <configuration name="All in MowItNow.app.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MowItNow.app.test" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CheckInputTest.test_isValidLawerCordinate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MowItNow.app.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mowitnow.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mowitnow.service" />
+      <option name="MAIN_CLASS_NAME" value="mowitnow.service.CheckInputTest" />
+      <option name="METHOD_NAME" value="test_isValidLawerCordinate(java.lang.String,boolean)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CheckInputTest.test_isValidMowerMovements" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MowItNow.app.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mowitnow.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mowitnow.service" />
+      <option name="MAIN_CLASS_NAME" value="mowitnow.service.CheckInputTest" />
+      <option name="METHOD_NAME" value="test_isValidMowerMovements(java.lang.String,boolean)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CheckInputTest.test_isValidMowerPosition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MowItNow.app.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mowitnow.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mowitnow.service" />
+      <option name="MAIN_CLASS_NAME" value="mowitnow.service.CheckInputTest" />
+      <option name="METHOD_NAME" value="test_isValidMowerPosition(java.lang.String,boolean)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.App" />
-        <item itemvalue="Gradle.MowItNow:app [run]" />
+        <item itemvalue="JUnit.All in MowItNow.app.test" />
+        <item itemvalue="JUnit.CheckInputTest.test_isValidMowerMovements" />
+        <item itemvalue="JUnit.CheckInputTest.test_isValidMowerPosition" />
+        <item itemvalue="JUnit.CheckInputTest.test_isValidLawerCordinate" />
+        <item itemvalue="JUnit.All in MowItNow.app.test (1)" />
       </list>
     </recent_temporary>
   </component>

@@ -1,7 +1,7 @@
 package mowitnow.model;
 
 public enum Movement {
-    Right,
-    Left,
-    Forward;
+    RIGHT,
+    LEFT,
+    FORWARD;
 }

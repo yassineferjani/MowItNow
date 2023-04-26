@@ -6,7 +6,7 @@ public enum Orientation {
     WEST( 270),
     SOUTH( 180);
     private final int angle;
-    private Orientation( int angle) {
+    Orientation( int angle) {
         this.angle = angle;
     }
 
@@ -14,21 +14,23 @@ public enum Orientation {
         return angle;
     }
 
-   public static Orientation getOrientation(int angle) {
+   private static int adjustAngle(int angle) {
        int nextAngle = angle - (angle / 360) * 360;
        if (nextAngle < 0) {
            nextAngle += 360;
        }
-       return Orientation.fromAngle(nextAngle);
+       return nextAngle;
    }
-    private static Orientation fromAngle(int angle) {
-        switch (angle) {
-            case 0: return NORTH;
-            case 90: return EAST;
-            case 180: return SOUTH;
-            case 270: return WEST;
-            default:
-                throw new IllegalArgumentException("Invalid angle: " + angle);
-        }
+    public static Orientation get(int angle) {
+        return switch (adjustAngle(angle)) {
+            case 0 -> NORTH;
+            case 90 -> EAST;
+            case 180 -> SOUTH;
+            case 270 -> WEST;
+            default -> throw new IllegalArgumentException("Invalid angle: " + angle);
+        };
+    }
+    public Orientation rotate(int angle){
+        return get(this.angle + angle);
     }
 }

@@ -15,9 +15,9 @@ public class Mower {
     Lawn map;
     public static Orientation getNextOrientation(Movement movement, Orientation previousOrientation){
         return switch (movement){
-            case Forward -> previousOrientation;
-            case Left -> Orientation.getOrientation(previousOrientation.getAngle()-90);
-            case Right -> Orientation.getOrientation(previousOrientation.getAngle()+90);
+            case FORWARD -> previousOrientation;
+            case LEFT -> previousOrientation.rotate(-90);
+            case RIGHT -> previousOrientation.rotate(90);
         };
     }
 
@@ -31,7 +31,7 @@ public class Mower {
     }
 
     public void execute(final Movement instruction) {
-        if (!Movement.Forward.equals(instruction))
+        if (!Movement.FORWARD.equals(instruction))
             currentOrientation = getNextOrientation(instruction,currentOrientation);
         else {
             Coordinate nextCoordinate = forward(currentCoordinate,currentOrientation);

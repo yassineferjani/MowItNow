@@ -31,7 +31,6 @@ public class Lawn {
     public boolean isFree(Coordinate coordinate){
         return coordinates.getOrDefault(coordinate, false);
     }
-
     public void block(Coordinate coordinate){changeStateCoordinate(coordinate,false);}
     public void free(Coordinate coordinate){changeStateCoordinate(coordinate,true);}
 
