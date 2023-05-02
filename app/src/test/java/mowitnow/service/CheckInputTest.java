@@ -18,6 +18,7 @@ class CheckInputTest {
            "5  5,false",
            "' 5 5',false",
            "'5 5 ',false",
+           "'25 5',true",
     })
     void test_isValidLawerCordinate(String input, boolean expected) {
         assertThat(CheckInput.isValidLawerCordinate(input)).isEqualTo(expected);
@@ -31,6 +32,7 @@ class CheckInputTest {
             "N 5  5,false",
             "' 5 5 N',false",
             "'5 5 N ',false",
+            "'25 55 N',true",
     })
     void test_isValidMowerPosition(String input, boolean expected) {
         assertThat(CheckInput.isValidMowerPosition(input)).isEqualTo(expected);
@@ -39,7 +41,7 @@ class CheckInputTest {
     @ParameterizedTest
     @CsvSource({
             "'AGGGAGGD',true",
-            "'A G D',false",
+            "A G D,false",
             "'AG5D',false",
             "' AGGGAGGD',false",
             "'AGGGAGGD ',false",

@@ -1,9 +1,11 @@
 package mowitnow.model;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class OrientationTest {
 
@@ -48,4 +50,12 @@ class OrientationTest {
     void test_rotate(Orientation orientation,int angle, Orientation expected){
         assertThat(orientation.rotate(angle)).isEqualTo(expected);
     }
+
+    @Test
+    void test_get_return_exception(){
+        assertThatThrownBy(()->Orientation.get(91))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("Invalid angle: 91" );
+    }
+
 }

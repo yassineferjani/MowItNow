@@ -1,19 +1,23 @@
 package mowitnow.adapter;
 
+import mowitnow.exception.InvalidInput;
 import mowitnow.model.Lawn;
 import mowitnow.model.Movement;
 import mowitnow.model.Orientation;
 import mowitnow.service.Mower;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
 
 import static mowitnow.model.Movement.*;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class AdapterTest {
 
@@ -41,7 +45,7 @@ class AdapterTest {
     static Stream<Arguments> generateData() {
         return Stream.of(
                 Arguments.of("AGGAD", List.of(FORWARD, LEFT, LEFT, FORWARD, RIGHT)),
-                Arguments.of("D", List.of(RIGHT)),
+                Arguments.of("D", Collections.singletonList(RIGHT)),
                 Arguments.of("AAAGG", List.of(FORWARD, FORWARD, FORWARD,LEFT,LEFT))
         );
     }
@@ -89,6 +93,41 @@ class AdapterTest {
     })
     void test_mapFromOrientation(Orientation input, String expected) {
         assertThat(Adapter.mapFromOrientation(input)).isEqualTo(expected);
+    }
+
+    @Test
+    void test_mapToListOfMovements_return_exception(){
+        assertThatThrownBy(()->Adapter.mapToListOfMovements("A GDAB"))
+                .isInstanceOf(InvalidInput.class)
+                .hasMessage("Invalid instructions : A GDAB");
+    }
+
+    @Test
+    void test_maptoMower(){
+        assertThatThrownBy(()->Adapter.maptoMower("5 A 6",null))
+                .isInstanceOf(InvalidInput.class)
+                .hasMessage("Invalid lawn coordinate : 5 A 6");
+    }
+
+    @Test
+    void test_maptoLawn(){
+        assertThatThrownBy(()->Adapter.maptoLawn("5 A"))
+                .isInstanceOf(InvalidInput.class)
+                .hasMessage("Invalid lawn coordinate : 5 A");
+    }
+
+    @Test
+    void test_mapToOrientation(){
+        assertThatThrownBy(()->Adapter.mapToOrientation("O"))
+                .isInstanceOf(IllegalStateException.class)
+                .hasMessage("Unexpected value: O");
+    }
+
+    @Test
+    void test_mapToMovement(){
+        assertThatThrownBy(()->Adapter.mapToMovement('F'))
+                .hasMessage("Unexpected value: F")
+                .isInstanceOf(IllegalStateException.class);
     }
 
 }

@@ -33,7 +33,7 @@ public class Adapter {
 
     public static List<Movement> mapToListOfMovements(String s){
         if(!CheckInput.isValidMowerMovements(s))
-            throw new InvalidInput("Invalid instructions  : " + s);
+            throw new InvalidInput("Invalid instructions : " + s);
         return s
                 .chars()
                 .mapToObj(c->(char)c)
