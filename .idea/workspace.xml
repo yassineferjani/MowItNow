@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a2aaea86-d1fb-4cc3-8f20-1f22afeca253" name="Changes" comment="Added tests classes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/mowitnow/adapter/Adapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/mowitnow/adapter/Adapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/mowitnow/adapter/AdapterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/mowitnow/adapter/AdapterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/mowitnow/model/OrientationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/mowitnow/model/OrientationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/mowitnow/service/CheckInputTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/mowitnow/service/CheckInputTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,22 +110,48 @@
       <recent name="mowitnow.adapter" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AdapterTest.test_mapToMovement">
-    <configuration name="AdapterTest.test_mapToListOfMovements_return_exception" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MowItNow.app.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="mowitnow.adapter.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="mowitnow.adapter" />
-      <option name="MAIN_CLASS_NAME" value="mowitnow.adapter.AdapterTest" />
-      <option name="METHOD_NAME" value="test_mapToListOfMovements_return_exception" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+  <component name="RunManager" selected="Gradle.MowItNow:app [spotlessApply]">
+    <configuration name="MowItNow [spotlessApply]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="spotlessApply" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="MowItNow:app [spotlessApply]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="spotlessApply" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
     </configuration>
     <configuration name="AdapterTest.test_mapToMovement" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MowItNow.app.test" />
@@ -177,29 +201,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AdapterTest.test_maptoMower" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MowItNow.app.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="mowitnow.adapter.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="mowitnow.adapter" />
-      <option name="MAIN_CLASS_NAME" value="mowitnow.adapter.AdapterTest" />
-      <option name="METHOD_NAME" value="test_maptoMower" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.MowItNow:app [spotlessApply]" />
+        <item itemvalue="Gradle.MowItNow [spotlessApply]" />
         <item itemvalue="JUnit.AdapterTest.test_mapToMovement" />
         <item itemvalue="JUnit.AdapterTest.test_mapToOrientation" />
         <item itemvalue="JUnit.AdapterTest.test_maptoLawn" />
-        <item itemvalue="JUnit.AdapterTest.test_maptoMower" />
-        <item itemvalue="JUnit.AdapterTest.test_mapToListOfMovements_return_exception" />
       </list>
     </recent_temporary>
   </component>
@@ -282,7 +290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682546939656</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added tests classes">
+      <created>1683055566368</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1683055566368</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
